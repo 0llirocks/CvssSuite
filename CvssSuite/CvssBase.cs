@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Cvss.Suite
 {
@@ -76,7 +75,7 @@ namespace Cvss.Suite
 
             var score = OverallScore();
 
-            if(0.0 == score) return "None";
+            if (0.0 == score) return "None";
             else if (score <= 3.9) return "Low";
             else if (score <= 6.9) return "Medium";
             else if (score <= 8.9) return "High";
@@ -97,7 +96,7 @@ namespace Cvss.Suite
         /// </returns>
         /// <example>
         /// <code>
-        /// var selected = cvss.SelectedMetric("Access Vector");
+        /// var selected = cvss.SelectedValue("Access Vector");
         /// returns "Network"
         /// </code>
         /// </example>
@@ -107,21 +106,29 @@ namespace Cvss.Suite
         {
             if (!IsValid()) throw new ArgumentException();
 
-            if (!String.IsNullOrEmpty(BaseMetric.SelectedMetric(metric))) return BaseMetric.SelectedMetric(metric);
-            if (!String.IsNullOrEmpty(TemporalMetric.SelectedMetric(metric))) return TemporalMetric.SelectedMetric(metric);
-            if (!String.IsNullOrEmpty(EnvironmentalMetric.SelectedMetric(metric))) return EnvironmentalMetric.SelectedMetric(metric);
+            if (!String.IsNullOrEmpty(BaseMetric.SelectedValue(metric))) return BaseMetric.SelectedValue(metric);
+            if (!String.IsNullOrEmpty(TemporalMetric.SelectedValue(metric))) return TemporalMetric.SelectedValue(metric);
+            if (!String.IsNullOrEmpty(EnvironmentalMetric.SelectedValue(metric))) return EnvironmentalMetric.SelectedValue(metric);
             return "";
         }
 
         /// <summary>
-        /// Returns all available metric.
+        /// Returns the selected value for a metric.
         /// </summary>
+        /// <returns>
+        /// Returns the selected value or empty string if metric is not found.
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// var selected = cvss.SelectedValue(Cvss2.Metrics.AccessVector");
+        /// returns "Network"
+        /// </code>
+        /// </example>
+        /// <param name="metric">A valid metric e.g. <see cref="Cvss2.Metrics.AccessVector"/>, <see cref="Cvss30.Metrics.IntegrityImpact"/>, <see cref="Cvss31.Metrics.ModifiedAttackVector"/>.</param>
         /// <exception cref="System.ArgumentException">Thrown when vector is not valid.</exception>
-        public List<Metric> AvailableMetric()
+        public string SelectedMetric(Metric metric)
         {
-            if (!IsValid()) throw new ArgumentException();
-
-            return BaseMetric.AvailableMetrics.Concat(TemporalMetric.AvailableMetrics).Concat(EnvironmentalMetric.AvailableMetrics).ToList();
+            return SelectedMetric(metric.Name);
         }
 
         internal CvssBase(string vector, double version)

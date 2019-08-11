@@ -12,79 +12,7 @@ namespace Cvss.Suite.Cvss31
 
         internal BaseMetric(Dictionary<string, string> metrics) : base(metrics)
         {
-            AvailableMetrics = new List<Metric>() {
-                new Metric(
-                    "Attack Vector",
-                    "AV",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Network", "N", 0.85),
-                            new Metric.MetricValue("Adjacent", "A", 0.62),
-                            new Metric.MetricValue("Local", "L", 0.55),
-                            new Metric.MetricValue("Physical", "P", 0.2)
-                        }
-                ),
-                new Metric(
-                    "Attack Complexity",
-                    "AC",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Low", "L", 0.77),
-                            new Metric.MetricValue("High", "H", 0.44)
-                        }
-                ),
-                new Metric(
-                    "Privileges Required",
-                    "PR",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("None", "N", 0.85),
-                            new Metric.MetricValue("Low", "L", 0.62),
-                            new Metric.MetricValue("High", "H", 0.27)
-                        }
-                ),
-                new Metric(
-                    "User Interaction",
-                    "UI",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("None", "N", 0.85),
-                            new Metric.MetricValue("Required", "R", 0.62)
-                        }
-                ),
-                new Metric(
-                    "Scope",
-                    "S",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Unchanged", "U", 0.0),
-                            new Metric.MetricValue("Changed", "C", 0.0)
-                        }
-                ),
-                new Metric(
-                    "Confidentiality Impact",
-                    "C",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("High", "H", 0.56),
-                            new Metric.MetricValue("Low", "L", 0.22),
-                            new Metric.MetricValue("None", "N", 0.0)
-                        }
-                ),
-                new Metric(
-                    "Integrity Impact",
-                    "I",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("High", "H", 0.56),
-                            new Metric.MetricValue("Low", "L", 0.22),
-                            new Metric.MetricValue("None", "N", 0.0)
-                        }
-                ),
-                new Metric(
-                    "Availability Impact",
-                    "A",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("High", "H", 0.56),
-                            new Metric.MetricValue("Low", "L", 0.22),
-                            new Metric.MetricValue("None", "N", 0.0)
-                        }
-                )
-            };
-            GetValues();
+            AvailableMetrics = Metrics.Base();
         }
 
         internal override double Score()
@@ -101,21 +29,21 @@ namespace Cvss.Suite.Cvss31
 
             //Exploitability = 8.22 × AttackVector × AttackComplexity × PrivilegeRequired × UserInteraction
 
-            var privilegesRequired = MetricValues["Privileges Required"];
+            var privilegesRequired = MetricScore(Metrics.PrivilegesRequired);
 
-            if(IsScopeChanged())
+            if (IsScopeChanged())
             {
-                if (MetricValues["Privileges Required"] == 0.62) privilegesRequired = 0.68;
-                if (MetricValues["Privileges Required"] == 0.27) privilegesRequired = 0.50;
+                if (MetricScore(Metrics.PrivilegesRequired) == 0.62) privilegesRequired = 0.68;
+                if (MetricScore(Metrics.PrivilegesRequired) == 0.27) privilegesRequired = 0.50;
             }
 
-            var exploitability = 8.22 * MetricValues["Attack Vector"] * MetricValues["Attack Complexity"] * privilegesRequired * MetricValues["User Interaction"];
+            var exploitability = 8.22 * MetricScore(Metrics.AttackVector) * MetricScore(Metrics.AttackComplexity) * privilegesRequired * MetricScore(Metrics.UserInteraction);
 
-            var iscBase = 1 - ((1 - MetricValues["Confidentiality Impact"]) * (1 - MetricValues["Integrity Impact"]) * (1 - MetricValues["Availability Impact"]));
+            var iscBase = 1 - ((1 - MetricScore(Metrics.ConfidentialityImpact)) * (1 - MetricScore(Metrics.IntegrityImpact)) * (1 - MetricScore(Metrics.AvailabilityImpact)));
 
             var impact = 0.0;
 
-            if(IsScopeChanged())
+            if (IsScopeChanged())
             {
                 impact = 7.52 * (iscBase - 0.029) - 3.25 * Math.Pow(iscBase - 0.02, 15);
             }

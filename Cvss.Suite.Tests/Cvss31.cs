@@ -55,7 +55,6 @@ namespace Cvss.Suite.Tests
             Assert.AreEqual(false, cvss.IsValid());
             Assert.AreEqual(3.1, cvss.Version);
 
-            Assert.ThrowsException<ArgumentException>(() => cvss.AvailableMetric());
             Assert.ThrowsException<ArgumentException>(() => cvss.BaseScore());
             Assert.ThrowsException<ArgumentException>(() => cvss.EnvironmentalScore());
             Assert.ThrowsException<ArgumentException>(() => cvss.OverallScore());

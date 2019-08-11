@@ -7,6 +7,8 @@
     <PackageId>CvssSuite</PackageId>
     <Authors>CvssSuite</Authors>
     <Product>CvssSuite</Product>
+    <Version>0.1.2</Version>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
 </Project>

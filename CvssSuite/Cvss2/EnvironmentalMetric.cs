@@ -11,67 +11,13 @@ namespace Cvss.Suite.Cvss2
 
         internal EnvironmentalMetric(Dictionary<string, string> metrics) : base(metrics, "ND")
         {
-            AvailableMetrics = new List<Metric>() {
-                new Metric(
-                    "Collateral Damage Potential",
-                    "CDP",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("None", "N", 0.0),
-                            new Metric.MetricValue("Low", "L", 0.1),
-                            new Metric.MetricValue("Low-Medium", "LM", 0.3),
-                            new Metric.MetricValue("Medium-High", "MH", 0.4),
-                            new Metric.MetricValue("High", "H", 0.5),
-                            new Metric.MetricValue("Not Defined", "ND", 0.0)
-                        }
-                ),
-                new Metric(
-                    "Target Distribution",
-                    "TD",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("None", "N", 0.0),
-                            new Metric.MetricValue("Low", "L", 0.25),
-                            new Metric.MetricValue("Medium", "M", 0.75),
-                            new Metric.MetricValue("High", "H", 1.0),
-                            new Metric.MetricValue("Not Defined", "ND", 1.0),
-                        }
-                ),
-                new Metric(
-                    "Confidentiality Requirement",
-                    "CR",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Low", "L", 0.5),
-                            new Metric.MetricValue("Medium", "M", 1.0),
-                            new Metric.MetricValue("High", "H", 1.51),
-                            new Metric.MetricValue("Not Defined", "ND", 1.0)
-                        }
-                ),
-                new Metric(
-                    "Integrity Requirement",
-                    "IR",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Low", "L", 0.5),
-                            new Metric.MetricValue("Medium", "M", 1.0),
-                            new Metric.MetricValue("High", "H", 1.51),
-                            new Metric.MetricValue("Not Defined", "ND", 1.0)
-                        }
-                ),
-                new Metric(
-                    "Availability Requirement",
-                    "AR",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Low", "L", 0.5),
-                            new Metric.MetricValue("Medium", "M", 1.0),
-                            new Metric.MetricValue("High", "H", 1.51),
-                            new Metric.MetricValue("Not Defined", "ND", 1.0)
-                        }
-                )
-            };
-            GetValues();
+            AvailableMetrics = Metrics.Environmental();
             BaseMetric = new BaseMetric(metrics);
             TemporalMetric = new TemporalMetric(metrics, BaseMetric.AdjustedEnvironmentScore(
-                MetricValues["Confidentiality Requirement"], 
-                MetricValues["Integrity Requirement"], 
-                MetricValues["Availability Requirement"]));
+                MetricScore(Metrics.ConfidentialityRequirement),
+                MetricScore(Metrics.IntegrityRequirement),
+                MetricScore(Metrics.AvailabilityRequirement))
+                );
         }
 
         internal override double Score()
@@ -85,7 +31,7 @@ namespace Cvss.Suite.Cvss2
 
             var adjustedTemporal = TemporalMetric.Score();
 
-            return Math.Round((adjustedTemporal + (10 - adjustedTemporal) * MetricValues["Collateral Damage Potential"]) * MetricValues["Target Distribution"], 1);
+            return Math.Round((adjustedTemporal + (10 - adjustedTemporal) * MetricScore(Metrics.CollateralDamagePotential)) * MetricScore(Metrics.TargetDistribution), 1);
         }
     }
 }

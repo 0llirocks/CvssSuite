@@ -12,11 +12,11 @@ namespace Cvss.Suite
             NotDefined = notDefined;
         }
 
-        internal List<Metric> AvailableMetrics;
+        protected List<Metric> AvailableMetrics;
 
         internal abstract double Score();
 
-        internal string SelectedMetric(string metric)
+        internal string SelectedValue(string metric)
         {
 
             try
@@ -31,18 +31,15 @@ namespace Cvss.Suite
             }
         }
 
-        protected void GetValues()
+        protected double MetricScore(Metric metric)
         {
-            foreach (var metric in AvailableMetrics)
+            if (ExtractedMetrics.ContainsKey(metric.Abbreviation))
             {
-                if (ExtractedMetrics.ContainsKey(metric.Abbreviation))
-                {
-                    MetricValues[metric.Name] = metric.Values.Single(item => item.Abbreviation == ExtractedMetrics[metric.Abbreviation]).Value;
-                }
-                else
-                {
-                    MetricValues[metric.Name] = metric.Values.Single(item => item.Abbreviation == NotDefined).Value;
-                }
+                return metric.Values.Single(item => item.Abbreviation == ExtractedMetrics[metric.Abbreviation]).Score;
+            }
+            else
+            {
+                return metric.Values.Single(item => item.Abbreviation == NotDefined).Score;
             }
         }
 

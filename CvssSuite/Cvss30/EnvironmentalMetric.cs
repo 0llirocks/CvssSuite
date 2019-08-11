@@ -12,117 +12,7 @@ namespace Cvss.Suite.Cvss30
 
         internal EnvironmentalMetric(Dictionary<string, string> metrics) : base(metrics, "X")
         {
-            AvailableMetrics = new List<Metric>() {
-                new Metric(
-                    "Confidentiality Requirement",
-                    "CR",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("High", "H", 1.5),
-                            new Metric.MetricValue("Medium", "M", 1.0),
-                            new Metric.MetricValue("Low", "L", 0.5)
-                        }
-                ),
-                new Metric(
-                    "Integrity Requirement",
-                    "IR",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("High", "H", 1.5),
-                            new Metric.MetricValue("Medium", "M", 1.0),
-                            new Metric.MetricValue("Low", "L", 0.5)
-                        }
-                ),
-                new Metric(
-                    "Availability Requirement",
-                    "AR",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("High", "H", 1.5),
-                            new Metric.MetricValue("Medium", "M", 1.0),
-                            new Metric.MetricValue("Low", "L", 0.5)
-                        }
-                ),
-                new Metric(
-                    "Modified Attack Vector",
-                    "MAV",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("Network", "N", 0.85),
-                            new Metric.MetricValue("Adjacent", "A", 0.62),
-                            new Metric.MetricValue("Local", "L", 0.55),
-                            new Metric.MetricValue("Physical", "P", 0.2)
-                        }
-                ),
-                new Metric(
-                    "Modified Attack Complexity",
-                    "MAC",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("Low", "L", 0.77),
-                            new Metric.MetricValue("High", "H", 0.44)
-                        }
-                ),
-                new Metric(
-                    "Modified Privileges Required",
-                    "MPR",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("None", "N", 0.85),
-                            new Metric.MetricValue("Low", "L", 0.62),
-                            new Metric.MetricValue("High", "H", 0.27)
-                        }
-                ),
-                new Metric(
-                    "Modified User Interaction",
-                    "MUI",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("None", "N", 0.85),
-                            new Metric.MetricValue("Required", "R", 0.62)
-                        }
-                ),
-                new Metric(
-                    "Modified Scope",
-                    "MS",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 0.0),
-                            new Metric.MetricValue("Unchanged", "U", 0.0),
-                            new Metric.MetricValue("Changed", "C", 0.0)
-                        }
-                ),
-                new Metric(
-                    "Modified Confidentiality Impact",
-                    "MC",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("High", "H", 0.56),
-                            new Metric.MetricValue("Low", "L", 0.22),
-                            new Metric.MetricValue("None", "N", 0.0)
-                        }
-                ),
-                new Metric(
-                    "Modified Integrity Impact",
-                    "MI",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("High", "H", 0.56),
-                            new Metric.MetricValue("Low", "L", 0.22),
-                            new Metric.MetricValue("None", "N", 0.0)
-                        }
-                ),
-                new Metric(
-                    "Modified Availability Impact",
-                    "MA",
-                    new List<Metric.MetricValue>() {
-                            new Metric.MetricValue("Not Defined", "X", 1.0),
-                            new Metric.MetricValue("High", "H", 0.56),
-                            new Metric.MetricValue("Low", "L", 0.22),
-                            new Metric.MetricValue("None", "N", 0.0)
-                        }
-                )
-            };
-            GetValues();
+            AvailableMetrics = Metrics.Environmental();
             BaseMetric = new BaseMetric(metrics);
             TemporalMetric = new TemporalMetric(metrics, BaseMetric.Score());
         }
@@ -160,20 +50,20 @@ namespace Cvss.Suite.Cvss30
                 return TemporalMetric.Score();
             }
 
-            var modifiedPrivilegesRequired = MetricValues["Modified Privileges Required"];
+            var modifiedPrivilegesRequired = MetricScore(Metrics.ModifiedPrivilegesRequired);
 
             if (IsModifiedScopeChanged())
             {
-                if (MetricValues["Modified Privileges Required"] == 0.62) modifiedPrivilegesRequired = 0.68;
-                if (MetricValues["Modified Privileges Required"] == 0.27) modifiedPrivilegesRequired = 0.50;
+                if (MetricScore(Metrics.ModifiedPrivilegesRequired) == 0.62) modifiedPrivilegesRequired = 0.68;
+                if (MetricScore(Metrics.ModifiedPrivilegesRequired) == 0.27) modifiedPrivilegesRequired = 0.50;
             }
 
-            var exploitability = 8.22 * MetricValues["Modified Attack Vector"] * MetricValues["Modified Attack Complexity"] * modifiedPrivilegesRequired * MetricValues["Modified User Interaction"];
+            var exploitability = 8.22 * MetricScore(Metrics.ModifiedAttackVector) * MetricScore(Metrics.ModifiedAttackComplexity) * modifiedPrivilegesRequired * MetricScore(Metrics.ModifiedUserInteraction);
 
             var iscModified = Math.Min(1 - (
-                (1 - MetricValues["Modified Confidentiality Impact"] * MetricValues["Confidentiality Requirement"]) *
-                (1 - MetricValues["Modified Integrity Impact"] * MetricValues["Integrity Requirement"]) *
-                (1 - MetricValues["Modified Availability Impact"] * MetricValues["Availability Requirement"])
+                (1 - MetricScore(Metrics.ModifiedConfidentialityImpact) * MetricScore(Metrics.ConfidentialityRequirement)) *
+                (1 - MetricScore(Metrics.ModifiedIntegrityImpact) * MetricScore(Metrics.IntegrityRequirement)) *
+                (1 - MetricScore(Metrics.ModifiedAvailabilityImpact) * MetricScore(Metrics.AvailabilityRequirement))
                 ), 0.915);
 
             var modifiedImpact = 0.0;

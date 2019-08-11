@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Cvss.Suite
 {
     public class Metric
     {
 
-        public Metric(string name, string abbreviation, List<MetricValue> values)
+        internal Metric(string name, string abbreviation, List<MetricValue> values)
         {
             Name = name;
             Abbreviation = abbreviation;
@@ -24,13 +25,13 @@ namespace Cvss.Suite
 
             public readonly string Abbreviation;
 
-            public readonly double Value;
+            public readonly double Score;
 
-            public MetricValue(string name, string abbreviation, double value)
+            internal MetricValue(string name, string abbreviation, double score)
             {
                 Name = name;
                 Abbreviation = abbreviation;
-                Value = value;
+                Score = score;
             }
         }
     }
