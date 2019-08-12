@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cvss.Suite.Cvss2
 {
@@ -37,9 +34,9 @@ namespace Cvss.Suite.Cvss2
         {
             //AdjustedImpact = min(10, 10.41 * (1 - (1 - ConfImpact * ConfReq) * (1 - IntegImpact * IntegReq) * (1 - AvailImpact * AvailReq)))
 
-            var adjustedImpact = Math.Min(10.0, 10.41 * (1 - 
-                (1 - MetricScore(Metrics.ConfidentialityImpact) * confidentialityRequirement) * 
-                (1 - MetricScore(Metrics.IntegrityImpact) * integrityRequirement) * 
+            var adjustedImpact = Math.Min(10.0, 10.41 * (1 -
+                (1 - MetricScore(Metrics.ConfidentialityImpact) * confidentialityRequirement) *
+                (1 - MetricScore(Metrics.IntegrityImpact) * integrityRequirement) *
                 (1 - MetricScore(Metrics.AvailabilityImpact) * availabilityRequirement)));
 
             var exploitability = 20 * MetricScore(Metrics.AccessVector) * MetricScore(Metrics.AccessComplexity) * MetricScore(Metrics.Authentication);

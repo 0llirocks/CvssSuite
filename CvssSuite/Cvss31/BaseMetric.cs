@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Cvss.Suite.Helpers;
 
 namespace Cvss.Suite.Cvss31
@@ -52,11 +49,11 @@ namespace Cvss.Suite.Cvss31
                 impact = 6.42 * iscBase;
             }
 
-            if(impact <= 0)
+            if (impact <= 0)
             {
                 return 0.0;
             }
-            else if(IsScopeChanged())
+            else if (IsScopeChanged())
             {
                 return Math.Min(10, 1.08 * (impact + exploitability)).RoundUp31();
             }

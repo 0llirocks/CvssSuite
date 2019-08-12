@@ -37,6 +37,7 @@ namespace Cvss.Suite
 
         private static double GetVersion(string vector)
         {
+            if (vector == null) return 0;
             var version = versions.SingleOrDefault(item => vector.StartsWith(item.Vector));
             return version.Equals(null) ? 0 : version.Version;
         }

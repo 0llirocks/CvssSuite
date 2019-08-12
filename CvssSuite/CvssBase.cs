@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Cvss.Suite
 {
     /// <summary>
-    /// Represents a CVSS obejct.
+    /// Represents a CVSS object.
     /// </summary>
     public abstract class CvssBase
     {

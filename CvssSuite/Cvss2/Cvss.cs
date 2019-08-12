@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Cvss.Suite.Cvss2
 {
+    /// <summary>
+    /// Represents a CVSS v2 object.
+    /// </summary>
     public class Cvss : CvssBase
     {
         internal Cvss(string vector, double version) : base(vector, version)
@@ -20,6 +18,9 @@ namespace Cvss.Suite.Cvss2
             EnvironmentalMetric = new EnvironmentalMetric(ExtractedMetrics);
         }
 
+        /// <summary>
+        /// Returns whether the CVSS object is valid or not.
+        /// </summary>
         public override bool IsValid()
         {
             string base_pattern = @"^AV:[NAL]\/AC:[LHM]\/Au:[MSN]\/C:[NPC]\/I:[NPC]\/A:[NPC]";

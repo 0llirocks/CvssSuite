@@ -28,7 +28,7 @@ namespace Cvss.Suite.Cvss30
 
             var privilegesRequired = MetricScore(Metrics.PrivilegesRequired);
 
-            if(IsScopeChanged())
+            if (IsScopeChanged())
             {
                 if (MetricScore(Metrics.PrivilegesRequired) == 0.62) privilegesRequired = 0.68;
                 if (MetricScore(Metrics.PrivilegesRequired) == 0.27) privilegesRequired = 0.50;
@@ -40,7 +40,7 @@ namespace Cvss.Suite.Cvss30
 
             var impact = 0.0;
 
-            if(IsScopeChanged())
+            if (IsScopeChanged())
             {
                 impact = 7.52 * (iscBase - 0.029) - 3.25 * Math.Pow(iscBase - 0.02, 15);
             }
@@ -49,11 +49,11 @@ namespace Cvss.Suite.Cvss30
                 impact = 6.42 * iscBase;
             }
 
-            if(impact <= 0)
+            if (impact <= 0)
             {
                 return 0.0;
             }
-            else if(IsScopeChanged())
+            else if (IsScopeChanged())
             {
                 return Math.Min(10, 1.08 * (impact + exploitability)).RoundUp();
             }

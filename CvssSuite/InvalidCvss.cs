@@ -9,6 +9,9 @@
         {
         }
 
+        /// <summary>
+        /// Returns always false.
+        /// </summary>
         public override bool IsValid()
         {
             return false;

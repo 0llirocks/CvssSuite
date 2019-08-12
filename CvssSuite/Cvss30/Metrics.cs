@@ -2,6 +2,9 @@
 
 namespace Cvss.Suite.Cvss30
 {
+    /// <summary>
+    /// Represents CVSS v3.0 metrics.
+    /// </summary>
     public static class Metrics
     {
         public static Metric AttackVector { get; } = new Metric(
@@ -216,6 +219,9 @@ namespace Cvss.Suite.Cvss30
                 }
         );
 
+        /// <summary>
+        /// Returns all available metrics.
+        /// </summary>
         public static List<Metric> ToList()
         {
             var allMetrics = new List<Metric>(
@@ -231,6 +237,9 @@ namespace Cvss.Suite.Cvss30
             return allMetrics;
         }
 
+        /// <summary>
+        /// Returns base metrics.
+        /// </summary>
         public static List<Metric> Base()
         {
             return new List<Metric>()
@@ -246,6 +255,9 @@ namespace Cvss.Suite.Cvss30
             };
         }
 
+        /// <summary>
+        /// Returns temporal metrics.
+        /// </summary>
         public static List<Metric> Temporal()
         {
             return new List<Metric>()
@@ -256,6 +268,9 @@ namespace Cvss.Suite.Cvss30
             };
         }
 
+        /// <summary>
+        /// Returns environmental metrics.
+        /// </summary>
         public static List<Metric> Environmental()
         {
             return new List<Metric>()

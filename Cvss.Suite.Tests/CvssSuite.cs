@@ -7,6 +7,7 @@ namespace Cvss.Suite.Tests
     {
         [DataTestMethod]
         [DataRow("Not a valid vector!")]
+        [DataRow(null)]
         public void InvalidCvssVectors(string vector)
         {
             var cvss = Cvss.Suite.CvssSuite.Create(vector);
