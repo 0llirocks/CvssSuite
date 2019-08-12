@@ -1,6 +1,6 @@
 # CvssSuite for .NET
 
-[![NuGet Package Version](http://img.shields.io/nuget/v/CvssSuite.svg)](https://rubygems.org/gems/cvss-suite)
+[![NuGet Package Version](http://img.shields.io/nuget/v/CvssSuite.svg)](https://www.nuget.org/packages/CvssSuite)
 [![Cvss Support](https://img.shields.io/badge/CVSS-v2-brightgreen.svg)](https://www.first.org/cvss/v2/guide)
 [![Cvss Support](https://img.shields.io/badge/CVSS-v3.0-brightgreen.svg)](https://www.first.org/cvss/v3.0/user-guide)
 [![Cvss Support](https://img.shields.io/badge/CVSS-v3.1-brightgreen.svg)](https://www.first.org/cvss/v3.1/user-guide)
