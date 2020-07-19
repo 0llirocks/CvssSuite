@@ -101,3 +101,6 @@ There is a possibility of implementations generating different scores (+/- 0,1) 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/oliverhamboerger/CvssSuite. This project is intended to be a safe, welcoming space for collaboration.
+
+## References
+[CvssSuite for Ruby](https://github.com/siemens/cvss-suite)
