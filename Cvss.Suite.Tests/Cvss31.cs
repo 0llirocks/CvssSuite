@@ -32,6 +32,10 @@ namespace Cvss.Suite.Tests
         [DataRow("CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:U/RL:T/RC:U/CR:L/IR:L/AR:H/MAV:P/MAC:H/MPR:H/MUI:R/MS:C/MC:H/MI:H/MA:H", 10.0, 8.1, 5.6, 5.6, "Medium")]
         [DataRow("CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L/E:P/RL:W/RC:R/CR:L/IR:M/AR:H/MAV:N/MAC:H/MPR:N/MUI:R/MS:C/MC:N/MI:L/MA:H", 5.0, 4.4, 7.4, 7.4, "High")]
         [DataRow("CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:N/I:L/A:N/E:P/RL:U/RC:C/CR:H/IR:H/AR:H/MAV:N/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:H", 1.8, 1.7, 9.2, 9.2, "Critical")]
+
+        //Not Defined
+        [DataRow("CVSS:3.1/AV:P/AC:L/PR:H/UI:N/S:C/C:N/I:L/A:H/E:X/RL:T/RC:C/CR:M/IR:L/AR:H/MAV:P/MAC:L/MPR:L/MUI:X/MS:U/MC:N/MI:X/MA:H", 5.7, 5.5, 6.0, 6.0, "Medium")]
+        [DataRow("CVSS:3.1/AV:P/AC:L/PR:H/UI:N/S:C/C:N/I:L/A:H/E:X/RL:T/RC:C/CR:M/IR:L/AR:H/MAV:X/MAC:X/MPR:X/MUI:X/MS:X/MC:X/MI:X/MA:X", 5.7, 5.5, 6.9, 6.9, "Medium")]
         public void ValidCvss31Vectors(string vector, double baseScore, double temporalScore, double environmentalScore, double overallScore, string severity)
         {
             var cvss = Cvss.Suite.CvssSuite.Create(vector);
@@ -48,6 +52,7 @@ namespace Cvss.Suite.Tests
         [DataTestMethod]
         [DataRow("CVSS:3.1/")]
         [DataRow("CVSS:3.1/AV:L/AC:H/UI:R/S:U/C:L/I:L/A:L")]
+        [DataRow("CVSS:3.1/AV:X/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:H")]
         public void InvalidCvss31Vectors(string vector)
         {
             var cvss = Cvss.Suite.CvssSuite.Create(vector);

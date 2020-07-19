@@ -41,7 +41,7 @@ namespace Cvss.Suite
             public readonly string Name;
 
             /// <summary>
-            /// Abbrevviation for the value.
+            /// Abbreviation for the value.
             /// </summary>
             public readonly string Abbreviation;
 

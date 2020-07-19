@@ -93,6 +93,10 @@ namespace Cvss.Suite.Cvss30
 
         private bool IsModifiedScopeChanged()
         {
+            if (ExtractedMetrics["MS"] == "X")
+            {
+                return ExtractedMetrics["S"] == "C";
+            }
             return ExtractedMetrics["MS"] == "C";
         }
     }

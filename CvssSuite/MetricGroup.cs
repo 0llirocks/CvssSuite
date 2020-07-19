@@ -33,9 +33,42 @@ namespace Cvss.Suite
 
         protected double MetricScore(Metric metric)
         {
-            if (ExtractedMetrics.ContainsKey(metric.Abbreviation))
+            var metricAbbreviation = metric.Abbreviation;
+
+            if (ExtractedMetrics.ContainsKey(metricAbbreviation) && ExtractedMetrics[metricAbbreviation] == NotDefined)
             {
-                return metric.Values.Single(item => item.Abbreviation == ExtractedMetrics[metric.Abbreviation]).Score;
+                switch (metricAbbreviation)
+                {
+                    case "MAV":
+                        metricAbbreviation = "AV";
+                        break;
+                    case "MAC":
+                        metricAbbreviation = "AC";
+                        break;
+                    case "MPR":
+                        metricAbbreviation = "PR";
+                        break;
+                    case "MUI":
+                        metricAbbreviation = "UI";
+                        break;
+                    case "MS":
+                        metricAbbreviation = "S";
+                        break;
+                    case "MC":
+                        metricAbbreviation = "C";
+                        break;
+                    case "MI":
+                        metricAbbreviation = "I";
+                        break;
+                    case "MA":
+                        metricAbbreviation = "A";
+                        break;
+                }
+            }
+
+            if (ExtractedMetrics.ContainsKey(metricAbbreviation))
+            {
+                return metric.Values.Single(item => item.Abbreviation == ExtractedMetrics[metricAbbreviation]).Score;
             }
             else
             {
