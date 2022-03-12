@@ -5,16 +5,17 @@
     <AssemblyName>Cvss.Suite</AssemblyName>
     <RootNamespace>Cvss.Suite</RootNamespace>
     <PackageId>CvssSuite</PackageId>
-    <Authors>Oliver Hamboerger</Authors>
+    <Authors>0lli.rocks</Authors>
     <Product>CvssSuite</Product>
-    <Version>1.0.0</Version>
+    <Version>1.0.2</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>This NuGet package helps you to process the vector of the Common Vulnerability Scoring System. Besides calculating the Base, Temporal and Environmental Score, you are able to extract the selected option.</Description>
-    <PackageProjectUrl>https://oliverhamboerger.github.io/CvssSuite/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/oliverhamboerger/CvssSuite</RepositoryUrl>
+    <PackageProjectUrl>https://cvsssuite.0lli.rocks/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/0llirocks/CvssSuite</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright (c) 2019 Oliver Hamboerger</Copyright>
+    <Copyright>Copyright (c) 2020 0lli.rocks</Copyright>
     <PackageTags>security, cvss</PackageTags>
+    <Company>0lli.rocks</Company>
   </PropertyGroup>
 
 </Project>
