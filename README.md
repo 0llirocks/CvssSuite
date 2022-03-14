@@ -94,11 +94,11 @@ There is a possibility of implementations generating different scores (+/- 0,1) 
 
 ## Changelog
 
-[Click here to see all changes.](https://github.com/oliverhamboerger/CvssSuite/blob/master/CHANGES.md)
+[Click here to see all changes.](https://github.com/0llirocks/CvssSuite/blob/master/CHANGES.md)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/oliverhamboerger/CvssSuite. This project is intended to be a safe, welcoming space for collaboration.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/0llirocks/CvssSuite](https://github.com/0llirocks/CvssSuite). This project is intended to be a safe, welcoming space for collaboration.
 
 ## References
-[CvssSuite for Ruby](https://github.com/siemens/cvss-suite)
+[CvssSuite for Ruby](https://cvss-suite.0lli.rocks)
