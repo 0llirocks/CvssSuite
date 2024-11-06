@@ -74,6 +74,7 @@ namespace Cvss.Suite.Tests
         [DataRow("CVSS:4.0/AC:L/AV:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N")]
         [DataRow("CVSS:4.0/AV:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N")]
         [DataRow("CVSS:4.0/AV:L/AC:L/AT:X/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N")]
+        [DataRow("CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:XXX")]
         public void InvalidCvss40Vectors(string vector)
         {
             var cvss = Cvss.Suite.CvssSuite.Create(vector);

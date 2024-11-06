@@ -7,9 +7,17 @@ namespace Cvss.Suite.Cvss40
     /// </summary>
     public static class Metrics
     {
+        public static string[] ValidOrder { get; } = new string[] { 
+            "AV", "AC", "AT", "PR", "UI", "VC", "VI", "VA", "SC", "SI", "SA", // Base
+            "E", // Threat
+            "CR", "IR", "AR", "MAV", "MAC", "MAT", "MPR", "MUI", "MVC", "MVI", "MVA", "MSC", "MSI", "MSA", // Environmental
+            "S", "AU", "R", "V", "RE", "U" // Supplemental
+        };
+
         public static Metric AttackVector { get; } = new Metric(
             "Attack Vector",
             "AV",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("Network", "N"),
                     new Metric.MetricValue("Adjacent", "A"),
@@ -21,6 +29,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric AttackComplexity { get; } = new Metric(
             "Attack Complexity",
             "AC",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("Low", "L"),
                     new Metric.MetricValue("High", "H")
@@ -30,6 +39,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric AttackRequirements { get; } = new Metric(
             "Attack Requirements",
             "AT",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Present", "P")
@@ -39,6 +49,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric PrivilegesRequired { get; } = new Metric(
             "Privileges Required",
             "PR",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Low", "L"),
@@ -49,6 +60,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric UserInteraction { get; } = new Metric(
             "User Interaction",
             "UI",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Passive", "P"),
@@ -59,6 +71,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric VulnerableSystemConfidentialityImpact { get; } = new Metric(
             "Vulnerable System Confidentiality Impact",
             "VC",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Low", "L"),
@@ -69,6 +82,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric VulnerableSystemIntegrityImpact { get; } = new Metric(
             "Vulnerable System Integrity Impact",
             "VI",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Low", "L"),
@@ -79,6 +93,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric VulnerableSystemAvailabilityImpact { get; } = new Metric(
             "Vulnerable System Availability Impact",
             "VA",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Low", "L"),
@@ -89,6 +104,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric SubsequentSystemConfidentialityImpact { get; } = new Metric(
             "Subsequent System Confidentiality Impact",
             "SC",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Low", "L"),
@@ -99,6 +115,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric SubsequentSystemIntegrityImpact { get; } = new Metric(
             "Subsequent System Integrity Impact",
             "SI",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Low", "L"),
@@ -109,6 +126,7 @@ namespace Cvss.Suite.Cvss40
         public static Metric SubsequentSystemAvailabilityImpact { get; } = new Metric(
             "Subsequent System Availability Impact",
             "SA",
+            true,
             new List<Metric.MetricValue>() {
                     new Metric.MetricValue("None", "N"),
                     new Metric.MetricValue("Low", "L"),
