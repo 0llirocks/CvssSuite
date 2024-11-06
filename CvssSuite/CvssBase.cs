@@ -56,7 +56,7 @@ namespace Cvss.Suite
         /// Returns the overall score of the CVSS object.
         /// </summary>
         /// <exception cref="System.ArgumentException">Thrown when vector is not valid.</exception>
-        public double OverallScore()
+        public virtual double OverallScore()
         {
             if (!IsValid()) throw new ArgumentException();
 
@@ -102,13 +102,13 @@ namespace Cvss.Suite
         /// </example>
         /// <param name="metric">A valid metric e.g. "Access Vector", "Authentication", "Attack Vector".</param>
         /// <exception cref="System.ArgumentException">Thrown when vector is not valid.</exception>
-        public string SelectedMetric(string metric)
+        public virtual string SelectedMetric(string metric)
         {
             if (!IsValid()) throw new ArgumentException();
 
-            if (!String.IsNullOrEmpty(BaseMetric.SelectedValue(metric))) return BaseMetric.SelectedValue(metric);
-            if (!String.IsNullOrEmpty(TemporalMetric.SelectedValue(metric))) return TemporalMetric.SelectedValue(metric);
-            if (!String.IsNullOrEmpty(EnvironmentalMetric.SelectedValue(metric))) return EnvironmentalMetric.SelectedValue(metric);
+            if (!string.IsNullOrEmpty(BaseMetric.SelectedValue(metric))) return BaseMetric.SelectedValue(metric);
+            if (!string.IsNullOrEmpty(TemporalMetric.SelectedValue(metric))) return TemporalMetric.SelectedValue(metric);
+            if (!string.IsNullOrEmpty(EnvironmentalMetric.SelectedValue(metric))) return EnvironmentalMetric.SelectedValue(metric);
             return "";
         }
 
