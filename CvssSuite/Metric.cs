@@ -50,7 +50,7 @@ namespace Cvss.Suite
             /// </summary>
             public readonly double Score;
 
-            internal MetricValue(string name, string abbreviation, double score)
+            internal MetricValue(string name, string abbreviation, double score = 0)
             {
                 Name = name;
                 Abbreviation = abbreviation;

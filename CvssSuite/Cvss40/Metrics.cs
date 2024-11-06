@@ -11,10 +11,10 @@ namespace Cvss.Suite.Cvss40
             "Attack Vector",
             "AV",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Network", "N", 0),
-                    new Metric.MetricValue("Adjacent", "A", 0),
-                    new Metric.MetricValue("Local", "L", 0),
-                    new Metric.MetricValue("Physical", "P", 0)
+                    new Metric.MetricValue("Network", "N"),
+                    new Metric.MetricValue("Adjacent", "A"),
+                    new Metric.MetricValue("Local", "L"),
+                    new Metric.MetricValue("Physical", "P")
                 }
         );
 
@@ -22,8 +22,8 @@ namespace Cvss.Suite.Cvss40
             "Attack Complexity",
             "AC",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -31,8 +31,8 @@ namespace Cvss.Suite.Cvss40
             "Attack Requirements",
             "AT",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Present", "P", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Present", "P")
                 }
         );
 
@@ -40,9 +40,9 @@ namespace Cvss.Suite.Cvss40
             "Privileges Required",
             "PR",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -50,9 +50,9 @@ namespace Cvss.Suite.Cvss40
             "User Interaction",
             "UI",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Passive", "P", 0),
-                    new Metric.MetricValue("Active", "A", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Passive", "P"),
+                    new Metric.MetricValue("Active", "A")
                 }
         );
 
@@ -60,9 +60,9 @@ namespace Cvss.Suite.Cvss40
             "Vulnerable System Confidentiality Impact",
             "VC",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -70,9 +70,9 @@ namespace Cvss.Suite.Cvss40
             "Vulnerable System Integrity Impact",
             "VI",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -80,9 +80,9 @@ namespace Cvss.Suite.Cvss40
             "Vulnerable System Availability Impact",
             "VA",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -90,9 +90,9 @@ namespace Cvss.Suite.Cvss40
             "Subsequent System Confidentiality Impact",
             "SC",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -100,9 +100,9 @@ namespace Cvss.Suite.Cvss40
             "Subsequent System Integrity Impact",
             "SI",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -110,9 +110,9 @@ namespace Cvss.Suite.Cvss40
             "Subsequent System Availability Impact",
             "SA",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -120,10 +120,10 @@ namespace Cvss.Suite.Cvss40
             "Exploit Maturity",
             "E",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Attacked", "A", 0),
-                    new Metric.MetricValue("POC", "P", 0),
-                    new Metric.MetricValue("Unreported", "U", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Attacked", "A"),
+                    new Metric.MetricValue("POC", "P"),
+                    new Metric.MetricValue("Unreported", "U")
                 }
         );
 
@@ -131,10 +131,10 @@ namespace Cvss.Suite.Cvss40
             "Confidentiality Requirement",
             "CR",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("High", "H", 0),
-                    new Metric.MetricValue("Medium", "M", 0),
-                    new Metric.MetricValue("Low", "L", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("High", "H"),
+                    new Metric.MetricValue("Medium", "M"),
+                    new Metric.MetricValue("Low", "L")
                 }
         );
 
@@ -142,10 +142,10 @@ namespace Cvss.Suite.Cvss40
             "Integrity Requirement",
             "IR",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("High", "H", 0),
-                    new Metric.MetricValue("Medium", "M", 0),
-                    new Metric.MetricValue("Low", "L", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("High", "H"),
+                    new Metric.MetricValue("Medium", "M"),
+                    new Metric.MetricValue("Low", "L")
                 }
         );
 
@@ -153,10 +153,10 @@ namespace Cvss.Suite.Cvss40
             "Availability Requirement",
             "AR",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("High", "H", 0),
-                    new Metric.MetricValue("Medium", "M", 0),
-                    new Metric.MetricValue("Low", "L", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("High", "H"),
+                    new Metric.MetricValue("Medium", "M"),
+                    new Metric.MetricValue("Low", "L")
                 }
         );
 
@@ -164,11 +164,11 @@ namespace Cvss.Suite.Cvss40
             "Modified Attack Vector",
             "MAV",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Network", "N", 0),
-                    new Metric.MetricValue("Adjacent", "A", 0),
-                    new Metric.MetricValue("Local", "L", 0),
-                    new Metric.MetricValue("Physical", "P", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Network", "N"),
+                    new Metric.MetricValue("Adjacent", "A"),
+                    new Metric.MetricValue("Local", "L"),
+                    new Metric.MetricValue("Physical", "P")
                 }
         );
 
@@ -176,9 +176,9 @@ namespace Cvss.Suite.Cvss40
             "Modified Attack Complexity",
             "MAC",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -186,9 +186,9 @@ namespace Cvss.Suite.Cvss40
             "Modified Attack Requirements",
             "MAT",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Present", "P", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Present", "P")
                 }
         );
 
@@ -196,10 +196,10 @@ namespace Cvss.Suite.Cvss40
             "Modified Privileges Required",
             "MPR",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -207,10 +207,10 @@ namespace Cvss.Suite.Cvss40
             "Modified User Interaction",
             "MUI",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Passive", "P", 0),
-                    new Metric.MetricValue("Active", "A", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Passive", "P"),
+                    new Metric.MetricValue("Active", "A")
                 }
         );
 
@@ -218,10 +218,10 @@ namespace Cvss.Suite.Cvss40
             "Modified Vulnerable System Confidentiality",
             "MVC",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -229,10 +229,10 @@ namespace Cvss.Suite.Cvss40
             "Modified Vulnerable System Integrity",
             "MVI",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -240,10 +240,10 @@ namespace Cvss.Suite.Cvss40
             "Modified Vulnerable System Availability",
             "MVA",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("None", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("None", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -251,10 +251,10 @@ namespace Cvss.Suite.Cvss40
             "Modified Subsequent System Confidentiality",
             "MSC",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Negligible", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Negligible", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -262,11 +262,11 @@ namespace Cvss.Suite.Cvss40
             "Modified Subsequent System Integrity",
             "MSI",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Negligible", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0),
-                    new Metric.MetricValue("Safety", "S", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Negligible", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H"),
+                    new Metric.MetricValue("Safety", "S")
                 }
         );
 
@@ -274,11 +274,11 @@ namespace Cvss.Suite.Cvss40
             "Modified Subsequent System Availability",
             "MSA",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Negligible", "N", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("High", "H", 0),
-                    new Metric.MetricValue("Safety", "S", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Negligible", "N"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("High", "H"),
+                    new Metric.MetricValue("Safety", "S")
                 }
         );
 
@@ -286,9 +286,9 @@ namespace Cvss.Suite.Cvss40
             "Safety",
             "S",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Negligible", "N", 0),
-                    new Metric.MetricValue("Present", "P", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Negligible", "N"),
+                    new Metric.MetricValue("Present", "P")
                 }
         );
 
@@ -296,9 +296,9 @@ namespace Cvss.Suite.Cvss40
             "Automatable",
             "AU",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("No", "N", 0),
-                    new Metric.MetricValue("Yes", "Y", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("No", "N"),
+                    new Metric.MetricValue("Yes", "Y")
                 }
         );
 
@@ -306,10 +306,10 @@ namespace Cvss.Suite.Cvss40
             "Recovery",
             "R",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Automatic", "A", 0),
-                    new Metric.MetricValue("User", "U", 0),
-                    new Metric.MetricValue("Irrecoverable", "I", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Automatic", "A"),
+                    new Metric.MetricValue("User", "U"),
+                    new Metric.MetricValue("Irrecoverable", "I")
                 }
         );
 
@@ -317,9 +317,9 @@ namespace Cvss.Suite.Cvss40
             "Value Density",
             "V",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Diffuse", "D", 0),
-                    new Metric.MetricValue("Concentrated", "C", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Diffuse", "D"),
+                    new Metric.MetricValue("Concentrated", "C")
                 }
         );
 
@@ -327,10 +327,10 @@ namespace Cvss.Suite.Cvss40
             "Vulnerability Response Effort",
             "RE",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Low", "L", 0),
-                    new Metric.MetricValue("Moderate", "M", 0),
-                    new Metric.MetricValue("High", "H", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Low", "L"),
+                    new Metric.MetricValue("Moderate", "M"),
+                    new Metric.MetricValue("High", "H")
                 }
         );
 
@@ -338,11 +338,11 @@ namespace Cvss.Suite.Cvss40
             "Provider Urgency",
             "U",
             new List<Metric.MetricValue>() {
-                    new Metric.MetricValue("Not Defined", "X", 0),
-                    new Metric.MetricValue("Clear", "Clear", 0),
-                    new Metric.MetricValue("Green", "Green", 0),
-                    new Metric.MetricValue("Amber", "Amber", 0),
-                    new Metric.MetricValue("Red", "Red", 0)
+                    new Metric.MetricValue("Not Defined", "X"),
+                    new Metric.MetricValue("Clear", "Clear"),
+                    new Metric.MetricValue("Green", "Green"),
+                    new Metric.MetricValue("Amber", "Amber"),
+                    new Metric.MetricValue("Red", "Red")
                 }
         );
 
