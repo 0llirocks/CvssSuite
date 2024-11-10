@@ -25,6 +25,7 @@ namespace Cvss.Suite
             if (version == 2) return new Cvss2.Cvss(vector, version);
             if (version == 3.0) return new Cvss30.Cvss(vector, version);
             if (version == 3.1) return new Cvss31.Cvss(vector, version);
+            if (version == 4.0) return new Cvss40.Cvss(vector, version);
             else return new InvalidCvss(vector);
         }
 
@@ -32,7 +33,8 @@ namespace Cvss.Suite
         {
             new CvssVersion(2, "AV:"),
             new CvssVersion(3.0, "CVSS:3.0/"),
-            new CvssVersion(3.1, "CVSS:3.1/")
+            new CvssVersion(3.1, "CVSS:3.1/"),
+            new CvssVersion(4.0, "CVSS:4.0/")
         };
 
         private static double GetVersion(string vector)

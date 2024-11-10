@@ -7,7 +7,7 @@
     <PackageId>CvssSuite</PackageId>
     <Authors>0lli.rocks</Authors>
     <Product>CvssSuite</Product>
-    <Version>1.0.2</Version>
+    <Version>1.1.0</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>This NuGet package helps you to process the vector of the Common Vulnerability Scoring System. Besides calculating the Base, Temporal and Environmental Score, you are able to extract the selected option.</Description>
     <PackageProjectUrl>https://cvsssuite.0lli.rocks/</PackageProjectUrl>

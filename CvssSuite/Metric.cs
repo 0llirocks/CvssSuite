@@ -15,6 +15,11 @@ namespace Cvss.Suite
             Values = values;
         }
 
+        internal Metric(string name, string abbreviation, bool required, List<MetricValue> values) : this(name, abbreviation, values)
+        {
+            Required = required;
+        }
+
         /// <summary>
         /// Name of the metric.
         /// </summary>
@@ -29,6 +34,11 @@ namespace Cvss.Suite
         /// All available values for the metric.
         /// </summary>
         public readonly List<MetricValue> Values;
+
+        /// <summary>
+        /// Indicates whether the metric is required to be included in vector string.
+        /// </summary>
+        public readonly bool Required;
 
         /// <summary>
         /// Represents one available value for a metric.
@@ -50,7 +60,7 @@ namespace Cvss.Suite
             /// </summary>
             public readonly double Score;
 
-            internal MetricValue(string name, string abbreviation, double score)
+            internal MetricValue(string name, string abbreviation, double score = 0)
             {
                 Name = name;
                 Abbreviation = abbreviation;
