@@ -7,11 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvss.Suite", "CvssSuite\Cvs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvss.Suite.Tests", "Cvss.Suite.Tests\Cvss.Suite.Tests.csproj", "{F043FCCF-CD5B-4153-96F5-A1C88E8A3A52}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{BBB317CF-98DC-4BC2-9629-E01E5B80160C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{3D34F7A7-4D71-4FAE-AE16-7B0C768B36D1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{98A103F6-89A0-4DE3-8E4B-734EAE9B4F89}"
 	ProjectSection(SolutionItems) = preProject
-		test.yaml = test.yaml
+		.github\workflows\test.yaml = .github\workflows\test.yaml
 	EndProjectSection
 EndProject
 Global
@@ -31,9 +29,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{3D34F7A7-4D71-4FAE-AE16-7B0C768B36D1} = {BBB317CF-98DC-4BC2-9629-E01E5B80160C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4D9EEC9-09BC-45AB-915A-8C213196BBDB}
